@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+    <t t-extend="UserMenu" >
+        <t t-jquery="ul.oe_dropdown_menu>li>a[data-menu='account']" t-operation="replace">
+        </t>
+    </t>
+    <t t-extend="WebClient" >
+        <t t-jquery="td.announcement_bar" t-operation="replace">
+        </t>
+    </t>
+    <t t-extend="Login" >
+        <t t-jquery=".oe_login_footer" t-operation="replace">
+            <div class="oe_login_footer">
+                <a href="http://www.openerp.com" target="_blank">Powered by <span>OpenERP</span></a>
+            </div>
+        </t>
+    </t>
+</templates>

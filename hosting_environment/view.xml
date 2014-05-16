@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+        <record id="open_module_tree" model="ir.actions.act_window">
+            <field name="name">Modules</field>
+            <field name="res_model">ir.module.module</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="base.view_module_filter"/>
+        </record>
+        <menuitem id="base.module_mi" parent="base.menu_management" name="Modules" sequence="10" action="open_module_tree" />
+
+        <delete model="ir.ui.menu" id="base.menu_module_updates"/>
+    </data>
+</openerp>
