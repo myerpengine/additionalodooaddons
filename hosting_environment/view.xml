@@ -2,6 +2,10 @@
 
 <openerp>
     <data>
+        <!-- Alter the "Apps" menu item -->
+        <menuitem id="base.module_mi" parent="base.menu_management" name="OpenERP Apps" sequence="10" action="base.modules_act_cl"/>
+
+        <!-- The "Modules" menu item -->
         <record id="open_module_tree" model="ir.actions.act_window">
             <field name="name">Modules</field>
             <field name="res_model">ir.module.module</field>
@@ -9,8 +13,10 @@
             <field name="view_mode">kanban,tree,form</field>
             <field name="search_view_id" ref="base.view_module_filter"/>
         </record>
-        <menuitem id="base.module_mi" parent="base.menu_management" name="Modules" sequence="10" action="open_module_tree" />
+        <menuitem id="modules" parent="base.menu_management" name="Modules" sequence="1" action="open_module_tree" />
 
+        <!-- Remove the "Updates" and "Installed Modules" menu items -->
         <delete model="ir.ui.menu" id="base.menu_module_updates"/>
+        <delete model="ir.ui.menu" id="base.menu_module_tree"/>
     </data>
 </openerp>
