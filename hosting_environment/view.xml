@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <openerp>
-    <data>
+    <data noupdate="1">
         <!-- Alter the "Apps" menu item -->
         <menuitem id="base.module_mi" parent="base.menu_management" name="OpenERP Apps" sequence="10" action="base.modules_act_cl"/>
 
@@ -18,5 +18,14 @@
         <!-- Remove the "Updates" and "Installed Modules" menu items -->
         <delete model="ir.ui.menu" id="base.menu_module_updates"/>
         <delete model="ir.ui.menu" id="base.menu_module_tree"/>
+
+        <!-- remove "Manage databases" link in login page -->
+        <template id="login_layout" inherit_id="web.login_layout" name="Modified Login">
+            <xpath expr="//div[@class='oe_single_form_footer']" position="replace">
+                <div class="oe_single_form_footer">
+                    <a href="http://www.openerp.com" target="_blank">Powered by <span>OpenERP</span></a>
+                </div>
+            </xpath>
+        </template>
     </data>
 </openerp>

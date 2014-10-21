@@ -2,16 +2,18 @@
 
 <templates>
     <t t-extend="UserMenu" >
-        <t t-jquery="ul.oe_dropdown_menu>li>a[data-menu='account']" t-operation="replace">
+        <t t-jquery="a[data-menu='account']" t-operation="replace">
+        </t>
+        <t t-jquery="a[data-menu='odoo_support']" t-operation="replace">
         </t>
     </t>
-    <t t-extend="WebClient" >
-        <t t-jquery="td.announcement_bar" t-operation="replace">
+    <t t-extend="WebClient.announcement_bar" >
+        <t t-jquery=".announcement_bar" t-operation="replace">
         </t>
     </t>
-    <t t-extend="Login" >
-        <t t-jquery=".oe_login_footer" t-operation="replace">
-            <div class="oe_login_footer">
+    <t t-extend="web.login_layout" >
+        <t t-jquery=".oe_single_form_footer" t-operation="replace">
+            <div class="oe_single_form_footer">
                 <a href="http://www.openerp.com" target="_blank">Powered by <span>OpenERP</span></a>
             </div>
         </t>
