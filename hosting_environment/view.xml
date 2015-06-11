@@ -3,7 +3,7 @@
 <openerp>
     <data noupdate="1">
         <!-- Alter the "Apps" menu item -->
-        <menuitem id="base.module_mi" parent="base.menu_management" name="OpenERP Apps" sequence="10" action="base.modules_act_cl"/>
+        <menuitem id="base.module_mi" parent="base.menu_management" name="Odoo Apps" sequence="10" action="base.modules_act_cl"/>
 
         <!-- The "Modules" menu item -->
         <record id="open_module_tree" model="ir.actions.act_window">
