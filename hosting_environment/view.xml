@@ -2,31 +2,9 @@
 
 <openerp>
     <data noupdate="1">
-        <!-- Alter the "Apps" menu item -->
-        <menuitem id="base.module_mi" parent="base.menu_management" name="Odoo Apps" sequence="10" action="base.modules_act_cl"/>
-
-        <!-- The "Modules" menu item -->
-        <record id="open_module_tree" model="ir.actions.act_window">
-            <field name="name">Modules</field>
-            <field name="res_model">ir.module.module</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">kanban,tree,form</field>
-            <field name="search_view_id" ref="base.view_module_filter"/>
-        </record>
-        <menuitem id="modules" parent="base.menu_management" name="Modules" sequence="1" action="open_module_tree" />
-
-        <!-- Remove the "Updates" and "Local Modules" menu items when not using the technical features -->
-        <menuitem id="base.menu_module_tree" parent="base.menu_management" 
-            groups="base.group_no_one" name="Local Modules" sequence="5" action="base.open_module_tree" />
-        <menuitem id="base.menu_module_updates" parent="base.menu_management" 
-            groups="base.group_no_one" sequence="20" action="base.modules_updates_act_cl"/>
-
         <!-- remove "Manage databases" link in login page -->
         <template id="login_layout" inherit_id="web.login_layout" name="Modified Login">
-            <xpath expr="//div[@class='oe_single_form_footer']" position="replace">
-                <div class="oe_single_form_footer">
-                    <a href="http://www.openerp.com" target="_blank">Powered by <span>OpenERP</span></a>
-                </div>
+            <xpath expr="//t[@t-if='not disable_database_manager']" position="replace">
             </xpath>
         </template>
     </data>
